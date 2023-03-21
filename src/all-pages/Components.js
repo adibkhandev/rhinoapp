@@ -116,7 +116,7 @@ export let Item = (props)=>{
        }
     })
    let data = props.data
-   let url = 'http://127.0.0.1:8000'
+   let url = 'https://rhino-backend.up.railway.app/'
    let dispatch = useDispatch()
    return(
            <div className="item-cont" >

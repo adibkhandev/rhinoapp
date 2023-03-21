@@ -15,7 +15,7 @@ const Log = (props) => {
    let user = context.user
 
    // console.log(context)
-   let url = 'http://127.0.0.1:8000/api/token/'
+   let url = 'https://rhino-backend.up.railway.app/api/token/'
 
    let config = {
       headers:{

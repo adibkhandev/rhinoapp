@@ -3,7 +3,7 @@ import Navigation from './Navigation-ash'
 import {Nav} from './Nav'
 import axios from 'axios'
 const Reg = (props) => {
-    let url = 'http://127.0.0.1:8000/signup/'
+    let url = 'https://rhino-backend.up.railway.app/signup/'
 	let [firstname,setFirstname]=useState()
    let [lastname,setLastname]=useState()
    let [phonenumber,setPhonenumber]=useState()

@@ -5,8 +5,8 @@ import {Link} from "react-router-dom"
 
 
 const RunningOut = () => {
-  let url = 'http://127.0.0.1:8000/news/'
-  let image_url = 'http://127.0.0.1:8000/'
+  let url = 'https://rhino-backend.up.railway.app/news/'
+  let image_url = 'https://rhino-backend.up.railway.app/'
   let [active,setActive]=useState(0)
   let [animate,setAnimate]=useState(0)
    let [deduct,setDeduct]=useState(0)

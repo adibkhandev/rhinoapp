@@ -87,7 +87,7 @@ const Cart = () => {
 	)
 }
 let Item = ({items,biller,setBiller,i})=>{
-	let url2 = 'http://127.0.0.1:8000'
+	let url2 = 'https://rhino-backend.up.railway.app/'
 	let [subtotal,setSubtotal] = useState(0)
 	let [last,setLast]= useState(0)
     let dispatch = useDispatch()

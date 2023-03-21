@@ -16,8 +16,8 @@ const Reviewer = () => {
         let userid = 28
 
 
-        let url = 'http://127.0.0.1:8000/addrev/'
-	let url2 = 'http://127.0.0.1:8000'
+        let url = 'https://rhino-backend.up.railway.app/addrev/'
+	let url2 = 'https://rhino-backend.up.railway.app/'
 	let [image1,setImage1]=useState(null)
 	let [image2,setImage2]=useState(null)
 	let [image3,setImage3]=useState(null)

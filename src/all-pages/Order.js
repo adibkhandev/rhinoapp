@@ -7,7 +7,7 @@ import {Taka} from "./Components"
 import Counter from './Counter'
 import Context from './Context'
 const Order = () => {
-let url = 'http://127.0.0.1:8000/ordered/'
+let url = 'https://rhino-backend.up.railway.app/ordered/'
 let context = useContext(Context)
 console.log(context.user.user_id)
 let userid = context.user? context.user.user_id : false

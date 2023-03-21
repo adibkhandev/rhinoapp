@@ -31,11 +31,11 @@ export let AuthProvider = ({children}) =>{
 	// console.log(refresh)
 	// console.log(search)
 	let lifespan = 1000 * 60 * 4
-	let url = 'http://127.0.0.1:8000/api/token/refresh/'
-	let liked_url = 'http://127.0.0.1:8000/liked/'
-	let user_url = 'http://127.0.0.1:8000/userdata/'
-	let search_url = 'http://127.0.0.1:8000/search/'
-	let search_url_cat = 'http://127.0.0.1:8000/search/cat/'
+	let url = 'https://rhino-backend.up.railway.app/api/token/refresh/'
+	let liked_url = 'https://rhino-backend.up.railway.app/liked/'
+	let user_url = 'https://rhino-backend.up.railway.app/userdata/'
+	let search_url = 'https://rhino-backend.up.railway.app/search/'
+	let search_url_cat = 'https://rhino-backend.up.railway.app/search/cat/'
     // console.log(token,'token')
 
 
