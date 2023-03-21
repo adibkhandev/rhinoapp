@@ -62,7 +62,7 @@ const Results=({results,loading})=>{
 	)
 }
 const Card =({result})=>{
-	let url2 = 'https://rhino-backend.up.railway.app/'
+	let url2 = 'https://rhino-backend.up.railway.app'
 	let dispatch = useDispatch()
 	console.log(result.rev,'revv')
 	let Totalrating = [0]
