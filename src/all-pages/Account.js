@@ -19,7 +19,7 @@ const Account = () => {
 		 },
 	    };
 
-	let url = 'https://rhino-backend.up.railway.app/'
+	let url = 'https://rhino-backend.up.railway.app'
     let context = useContext(Context)
     let logout = context.logout
     let userdata = context.userdata

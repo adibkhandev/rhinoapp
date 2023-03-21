@@ -99,7 +99,7 @@ export let SearchEngine = ({setSearch,searchon,ase}) =>{
 let IconNav =(props)=>{
 	let [scrollDirection,setScrollDirection] = useState('')
 	let [pastPosition,setPastPosition] = useState(0)
-	let url = 'https://rhino-backend.up.railway.app/'
+	let url = 'https://rhino-backend.up.railway.app'
      let scroller = () =>{
          let scroll = window.scrollY
          if(scroll>pastPosition){
