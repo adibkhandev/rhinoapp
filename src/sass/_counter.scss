@@ -1,0 +1,30 @@
+.counter-cont{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 6em;
+    height: 5em;
+	.left-arrow{
+		width: 1em;
+		min-width: 1em;
+		transform: rotate(180deg);
+	}
+	.right-arrow{
+		width: 1em;
+		min-width: 1em;
+		transform: rotate(0deg);
+	}
+	.header-cont{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: #8f8f8f;
+        height: 1.8em;
+        width: 1.8em;
+		border-radius: 900px;
+		h1{
+			@include Font(1.3em,300);
+			color: #dfdfdf;
+		}
+	}
+}

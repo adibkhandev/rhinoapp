@@ -1,0 +1,146 @@
+.searched-page{
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	height: auto;
+	width: 100vw;
+	.nav-contain{
+      z-index: 1;
+	}
+	.all{
+		// width: 100%;
+		  z-index:1 ;
+			margin-top: 8em;
+	}
+	.filter-widget{
+	  margin-bottom: 0.6em;
+		width: 80vw;
+	}
+	.container{
+		width: 80vw;
+	
+		display: flex;
+		flex-direction: column;
+		justify-content:center ;
+		align-items: center;
+	}
+	.cards{
+		overflow: hidden;
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(108px,1.2fr));
+
+		
+		grid-row-gap: 1.2vw;
+		grid-column-gap: min(1.2vw,1em);
+		
+		width: 80vw;
+		height: auto;
+		margin-bottom: 1em;
+		.cont{
+			position: relative;
+			height: auto;
+			width: auto;
+
+		}
+	}
+		.functional-buttons{
+			position: absolute;
+			bottom: 3%;
+			left: 2%;
+               width: 7.15vw;
+ 
+		}
+
+	.card{
+
+		background-color: #efefef;
+		box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;  
+     height:20vw;
+     min-height: 16em;
+     max-height: 18em;
+     width: 100% !important;
+
+     .title{
+     	width: 95%;
+     	margin-left: 5%;
+     	margin-bottom: 4% ;
+
+     }
+     .taka{
+     	h1{
+      font-weight: 200;
+}
+     	margin-bottom: 12%;
+     	margin-left: 5%;
+     }
+     .stars{
+     	margin-left: 3%;
+     	margin-bottom: 3%;
+     }
+ 
+	}
+	.image-cont{
+		width: 100%;
+		max-height: 10em;
+		margin-bottom: 0.2em;
+		overflow: hidden;
+		img{
+
+               min-height:10em ;
+			width: 104%;
+		}
+	}
+	.cart-like{
+		width: 60%;
+		min-width: 6em;
+		display: flex;
+		justify-content: space-between;
+          margin-left: 2%;
+          margin-right: 6%;
+          margin-top: 0.4em;		
+
+
+		h1{
+		@include Font(0.7rem,100);	
+		}
+	}
+	.title{
+		@include Font(0.8rem,100);
+	}
+	.stars{
+		img{
+			height: 0.7em;
+			margin: 0 1px;
+		}
+	}
+	.like{
+		
+		height: 0.8em;
+		img{
+			height:100%;
+		}
+	}
+}
+
+@media (width < 420px) {
+	.cards{
+		grid-template-columns: repeat(auto-fit, minmax(98px,1.2fr)) !important;
+	}
+	
+}
+@media (width<515px) {
+	.searched-page{
+		.all{
+			margin-left: -2em !important;
+		}
+	}
+	
+}
+@media (width<600px) {
+	.all{
+		margin-top: 5em !important;
+	}
+	
+}
