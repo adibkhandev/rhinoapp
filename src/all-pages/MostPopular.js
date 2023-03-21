@@ -6,7 +6,7 @@ let array = [0,1,2,3]
 const MostPopular = () => {
     
      let url =    'https://rhino-backend.up.railway.app/ranker/'
-	let image_url = 'https://rhino-backend.up.railway.app/'
+	let image_url = 'https://rhino-backend.up.railway.app'
 	let context = useContext(Context)
 	let setResult = context.setresult
 	let setLoading = context.setloading
@@ -86,7 +86,7 @@ const MostPopular = () => {
 
 
 let Item = ({item}) =>{
-	let image_url = 'https://rhino-backend.up.railway.app/'
+	let image_url = 'https://rhino-backend.up.railway.app'
 	let [visible,setVisible] = useState(false)
 	let cardRef = useRef(null)
 	let callback = entries =>{

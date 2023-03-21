@@ -12,14 +12,14 @@ const Account = () => {
 	let [pfp,setPfp]=useState(null)
 	let [imageUrl,setImageUrl]= useState(null)
 	let pfp_ref = useRef(null)
-	let update_url = 'http://127.0.0.1:8000/update/'
+	let update_url = 'https://rhino-backend.up.railway.app/update/'
 		let config = {
 		 headers:{
                        "content-type":"multipart/form-data",
 		 },
 	    };
 
-	let url = 'http://127.0.0.1:8000'
+	let url = 'https://rhino-backend.up.railway.app'
     let context = useContext(Context)
     let logout = context.logout
     let userdata = context.userdata

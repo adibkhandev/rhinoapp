@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 
 const RunningOut = () => {
   let url = 'https://rhino-backend.up.railway.app/news/'
-  let image_url = 'https://rhino-backend.up.railway.app/'
+  let image_url = 'https://rhino-backend.up.railway.app'
   let [active,setActive]=useState(0)
   let [animate,setAnimate]=useState(0)
    let [deduct,setDeduct]=useState(0)

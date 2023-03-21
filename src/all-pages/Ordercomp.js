@@ -4,7 +4,7 @@ import Counter from './Counter'
 
 
 const Ordercomp = ({data}) => {
-     let image_url = 'https://rhino-backend.up.railway.app/'
+     let image_url = 'https://rhino-backend.up.railway.app'
      console.log(data)
 	return (
 		<div>

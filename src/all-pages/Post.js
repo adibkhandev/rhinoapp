@@ -5,7 +5,7 @@ import {useLocation} from 'react-router-dom'
 import {Link} from "react-router-dom"
 import axios from 'axios'
 const Post =(props)=>{
-	let base_url = 'https://rhino-backend.up.railway.app/'
+	let base_url = 'https://rhino-backend.up.railway.app'
 	let store = useSelector((state)=> state.data)
 	let [open,setOpen]=useState(false)
 	let [num,setNum] = useState(null)
@@ -66,7 +66,7 @@ const Post =(props)=>{
 }
 const MainPost = ({data,open,num}) => {
 	let [count,setCount]=useState(1)
-	let url2 = 'https://rhino-backend.up.railway.app/'
+	let url2 = 'https://rhino-backend.up.railway.app'
 	let dispatch = useDispatch()
 	let cartid = useId()
     console.log("post",data)
@@ -192,7 +192,7 @@ const Review = ({data,setNum,setImages}) =>{
 	let [image,setImage] = useState(null)
 	
 	let url = 'https://rhino-backend.up.railway.app/review/images/'
-	let base_url = 'https://rhino-backend.up.railway.app/'
+	let base_url = 'https://rhino-backend.up.railway.app'
     console.log(data,'data')
     useEffect(() => {
     	axios.post(url,{'id':data.id})

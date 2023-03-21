@@ -12,7 +12,7 @@ const Bill = () => {
 	
 	let data = useSelector((state)=> state.data)
 	let url = 'https://rhino-backend.up.railway.app/orderplace/'
-	let url2 = 'https://rhino-backend.up.railway.app/'
+	let url2 = 'https://rhino-backend.up.railway.app'
 	let context = useContext(Context)
 	let bill = context.biller
 	let id = context.user.user_id || null
