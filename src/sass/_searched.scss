@@ -29,7 +29,7 @@
 	.cards{
 		overflow: hidden;
 		display: grid;
-		grid-template-columns: repeat(auto-fit, minmax(108px,1.2fr));
+		grid-template-columns: repeat(auto-fit, minmax(108px,1fr));
 
 		
 		grid-row-gap: 1.2vw;
@@ -42,6 +42,17 @@
 			position: relative;
 			height: auto;
 			width: auto;
+			max-width: 10em;
+
+		}
+	}
+	.shortage{
+		width: 80vw;
+		justify-content: flex-start;
+		display: flex ;
+		flex-wrap: wrap;
+		.card{
+			width: 9em !important;
 
 		}
 	}
@@ -135,7 +146,17 @@
 		.all{
 			margin-left: -2em !important;
 		}
+
 	}
+	
+}
+@media (width<565px) {
+	.shortage{
+			display: grid !important;
+			.card{
+				width: 7em !important;
+			}
+		}
 	
 }
 @media (width<600px) {

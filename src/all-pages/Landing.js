@@ -123,7 +123,7 @@ let Scrolldown = (props)=>{
       <button onClick={()=>{
         window.scroll(0,1000)
       }} className={props.visibility?"arrow-down-button appear" : "arrow-down-button flee"}>
-       <img src="images/arrow-icon.png" alt="" className="scrolldown"/>
+       <img src="rhinoapp/images/arrow-icon.png" alt="" className="scrolldown"/>
       </button>
     </> 
   )
@@ -135,6 +135,7 @@ let Heading=()=>{
         <h1>
           largest 
           <span>manga</span> shop in bangladesh
+         
         </h1>
 
   )
@@ -143,7 +144,7 @@ let Popup =()=>{
 
   return(
       
-       <img src="images/mikasa.png" alt="" className="pop-img"/>
+       <img src="rhinoapp/images/mikasa.png" alt="" className="pop-img"/>
       
   )
 }

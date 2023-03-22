@@ -33,17 +33,17 @@ const Results=({results,loading})=>{
 	let [start,setStart]=useState(0)
 	let [limit,setLimit]=useState(20000)
 
-	console.log(results,'got')
 	let resultFiltered = results?results.filter((result)=>{
 		return start<=result.price && result.price<=limit
 	}):[]
+	console.log(resultFiltered.length,'got')
 	return(
 		<>
 		  
 		  <div className="all">
 		   <Filter start={start} setStart={setStart} limit={limit} setLimit={setLimit} /> 
 	       {!loading && results.length!=0?(
-	       	 <div className="cards">
+	       	 <div  className={resultFiltered.length<6?"cards shortage":"cards"}>
               
 	       	  {resultFiltered.map((result)=>{
 	       	  	return(
