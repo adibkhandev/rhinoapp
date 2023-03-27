@@ -132,7 +132,8 @@ overflow: hidden;
 	font-size: inherit;
 }
 .inp-log{
-	padding: clamp(0.8rem,1.4vw,1.45em) 0.35em;
+
+	padding: 1.5em 0.1em ;
 	margin:0 0.5em;
 }
 }
@@ -342,4 +343,12 @@ overflow: hidden;
 	}
 
 	
+}
+@media (width>700px){
+
+	// .inp-log{
+	// 	padding: 0.5rem ;
+	// }
+
+
 }
