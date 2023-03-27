@@ -132,7 +132,7 @@ overflow: hidden;
 	font-size: inherit;
 }
 .inp-log{
-	padding: 1.45em 0.35em;
+	padding: clamp(0.8rem,1.4vw,1.45em) 0.35em;
 	margin:0 0.5em;
 }
 }
@@ -302,12 +302,15 @@ overflow: hidden;
 	 	font-size: clamp(0.6rem,0.7vw,0.82rem) !important;
 	 }
 }
-@media (width <600px) {
+@media (width <770px) {
 	.inputs{
 		.headline{
 			font-size: clamp(1.68rem,8.2vw,2.14rem);
 		}
 		input{
+			font-size: clamp(0.3rem,2.5vw,0.6rem) !important;
+		}
+		.inp-log{
 			font-size: clamp(0.3rem,2.5vw,0.6rem) !important;
 		}
 		.but{
@@ -323,7 +326,7 @@ overflow: hidden;
        font-size: clamp(1.7rem,8vw,2.1rem) !important;
 		}
 		input{
-			font-size: clamp(0.4rem,2.7vw,0.7rem) !important;
+			font-size: clamp(0.3rem,2.2vw,0.7rem) !important;
 		}
 		.but{
 			button{
