@@ -132,7 +132,7 @@ overflow: hidden;
 	font-size: inherit;
 }
 .inp-log{
-
+  max-width: 40vw;
 	padding: 1.5em 0.1em ;
 	margin:0 0.5em;
 }
@@ -346,9 +346,9 @@ overflow: hidden;
 }
 @media (width>700px){
 
-	// .inp-log{
-	// 	padding: 0.5rem ;
-	// }
+	.inp-log{
+		padding: 0.05em ;
+	}
 
 
 }
