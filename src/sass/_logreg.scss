@@ -305,14 +305,14 @@ overflow: hidden;
 @media (width <600px) {
 	.inputs{
 		.headline{
-			font-size: 2.14rem;
+			font-size: clamp(1.68rem,8.2vw,2.14rem);
 		}
 		input{
-			font-size: 0.6em !important;
+			font-size: clamp(0.3rem,2.5vw,0.6rem) !important;
 		}
 		.but{
 		button{
-			font-size: 0.6rem;
+			font-size: clamp(0.28rem,2.37vw,0.57rem);
 		}
 	}
 	}
@@ -320,14 +320,14 @@ overflow: hidden;
 
 	.login-inputs{
 		.headline{
-       font-size: 2.1rem;
+       font-size: clamp(1.7rem,8vw,2.1rem) !important;
 		}
 		input{
-			font-size: 0.7rem !important;
+			font-size: clamp(0.4rem,2.7vw,0.7rem) !important;
 		}
 		.but{
 			button{
-				font-size: 0.6rem;
+				font-size: clamp(0.3rem,2.5vw,0.6rem) ;
 			}
 		}
 	}

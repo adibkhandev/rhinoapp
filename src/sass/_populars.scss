@@ -49,6 +49,10 @@
 
 
 		.card{
+			  &:hover{
+    	transform: scale(1.01);
+       }
+		
 			background-color: white;
 			margin: 2px;
 			font-size: max(1.45vw,1rem);
@@ -90,12 +94,12 @@
 	.out{
 		opacity: 0;
 		margin-left: 250px !important;
-    	transition: margin 0.25s ease-in-out;
-    		transition: opacity 0.25s ease-in-out;
+    	transition: margin 0.75s ease-in-out;
+    		transition: opacity 0.75s ease-in-out;
 	}
 	.card{
-		transition: margin 0.25s ease-in-out;
-		
+		transition: margin 0.75s ease-in-out;
+
 	}
 	.page3{
 		height: auto;
@@ -114,7 +118,7 @@
       	flex-direction: column;
       	margin-left: 0;
       	.card{
-      		border-radius: 1px;
+      		border-radius: 2px;
       		height: 23em;
       		width: 16em;
       		margin-bottom: 6vh;

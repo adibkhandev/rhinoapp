@@ -5,8 +5,8 @@ import Context from './Context'
 let array = [0,1,2,3] 
 const MostPopular = () => {
     
-     let url =    'https://rhino-backend.up.railway.app/ranker/'
-	let image_url = 'https://rhino-backend.up.railway.app'
+     let url =    'http://127.0.0.1:8000/ranker'
+	let image_url = 'http://127.0.0.1:8000/'
 	let context = useContext(Context)
 	let setResult = context.setresult
 	let setLoading = context.setloading
@@ -86,7 +86,7 @@ const MostPopular = () => {
 
 
 let Item = ({item}) =>{
-	let image_url = 'https://rhino-backend.up.railway.app'
+	let image_url = 'http://127.0.0.1:8000'
 	let [visible,setVisible] = useState(false)
 	let cardRef = useRef(null)
 	let callback = entries =>{
@@ -100,7 +100,7 @@ let Item = ({item}) =>{
 	let options = {
 		root:null,
 		rootMargin:'0px',
-		threshold:0.45
+		threshold:0.75
 	}
 	useEffect(() => {
 		let observer = new IntersectionObserver(callback,options)
@@ -120,7 +120,7 @@ let Item = ({item}) =>{
 						      <img src={`${image_url}${item.image}`} alt="" className="card-image"/>
 						      <h1 className="card-title">{item.name}</h1>
 						      <div className="price">
-						       <img src="images/taka.png" alt="" className="price-icon"/>
+						       <img src="rhinoapp/images/taka.png" alt="" className="price-icon"/>
 						       <h1 className="card-price">{item.price}</h1>
 						      </div>
 						
