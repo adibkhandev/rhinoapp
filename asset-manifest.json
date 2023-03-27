@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/rhinoapp/static/css/main.afcd668a.css",
+    "main.css": "/rhinoapp/static/css/main.76c95bf4.css",
     "main.js": "/rhinoapp/static/js/main.b0dd8645.js",
     "static/js/787.99430d6b.chunk.js": "/rhinoapp/static/js/787.99430d6b.chunk.js",
     "static/media/landing-background.jpg": "/rhinoapp/static/media/landing-background.53f3d93d4a29e475a7a9.jpg",
     "static/media/Komigo.ttf": "/rhinoapp/static/media/Komigo.6f3c63d06f8f676f98fe.ttf",
     "index.html": "/rhinoapp/index.html",
-    "main.afcd668a.css.map": "/rhinoapp/static/css/main.afcd668a.css.map",
+    "main.76c95bf4.css.map": "/rhinoapp/static/css/main.76c95bf4.css.map",
     "main.b0dd8645.js.map": "/rhinoapp/static/js/main.b0dd8645.js.map",
     "787.99430d6b.chunk.js.map": "/rhinoapp/static/js/787.99430d6b.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.afcd668a.css",
+    "static/css/main.76c95bf4.css",
     "static/js/main.b0dd8645.js"
   ]
 }
