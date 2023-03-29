@@ -158,3 +158,38 @@
        opacity: 0;
 	}
 }
+@keyframes loader {
+	0%{
+		width: 0.1em;
+		height: 0.1em;
+		border-radius: 100000px;
+		opacity: 0.1;
+		
+		
+	}
+	40%{
+
+		opacity: 0.8;
+	}
+	95%{
+		width: 100vh;
+		height: 100vh;
+		
+	}
+	100%{
+		width: 120vw;
+		height: 120vh;
+		border-radius: 10px;
+
+		opacity: 1;
+	}
+	
+}
+@keyframes spiner {
+	from{
+		transform: rotate(0);
+	}
+	to{
+		transform: rotate(4320deg);
+	}
+}

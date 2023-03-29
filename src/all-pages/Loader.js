@@ -4,8 +4,8 @@ const Loader = () => {
 	return (
 		<div>
 			<div className="loadpage">
-              <img className='pika-run' src="images/pika.gif" alt=""/>
-       
+              <img className='runner' src="rhinoapp/images/hamster.gif" alt=""/>
+              <div className="circle"></div>
            </div>
 
 		</div>

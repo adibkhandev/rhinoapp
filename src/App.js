@@ -32,7 +32,7 @@ const App = () => {
     let loading = setTimeout(()=>{
          setLoaded(true)
          console.log('done')
-    },8000);
+    },4200);
 
     return () => {
         clearTimeout(loading)  
