@@ -17,18 +17,38 @@ import Nav from "./all-pages/Nav"
 import Load from "./all-pages/Load"
 import Account from "./all-pages/Account"
 import {Taka} from "./all-pages/Components"
+import Loader from './all-pages/Loader'
 
 import {AuthProvider,Context} from './all-pages/Context'
 
 
 import {BrowserRouter , Routes,Route,Link} from "react-router-dom"
 const App = () => {
+  let [loaded,setLoaded]=useState(false)
+  
 
+//
+  useEffect(() => {
+    let loading = setTimeout(()=>{
+         setLoaded(true)
+         console.log('done')
+    },8000);
+
+    return () => {
+        clearTimeout(loading)  
+    };
+  }, [])
+
+//
 
   return (
      <>
-          <BrowserRouter basename={process.env.PUBLIC_URL} >
+     {!loaded?(
+         <Loader></Loader>
+      ):(
 
+          <BrowserRouter basename={process.env.PUBLIC_URL} >
+           
            <AuthProvider>
             <Routes>
                
@@ -48,6 +68,10 @@ const App = () => {
              
            </AuthProvider>
           </BrowserRouter>
+
+      )
+    }
+     
      </>
   )
 }

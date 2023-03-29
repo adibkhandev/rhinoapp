@@ -1,11 +1,13 @@
-import React,{useState,useEffect} from 'react'
+import React,{useState,useEffect,useContext} from 'react'
 import { useId } from 'react';
 import {useSelector,useDispatch} from 'react-redux'
 import {useLocation} from 'react-router-dom'
 import {Link} from "react-router-dom"
 import axios from 'axios'
+import Context from './Context'
 const Post =(props)=>{
-	let base_url = 'https://rhino-backend.up.railway.app'
+	// let base_url = 'https://rhino-backend.up.railway.app'
+	let base_url = '127.0.0.1:8000'
 	let store = useSelector((state)=> state.data)
 	let [open,setOpen]=useState(false)
 	let [num,setNum] = useState(null)
@@ -66,7 +68,8 @@ const Post =(props)=>{
 }
 const MainPost = ({data,open,num}) => {
 	let [count,setCount]=useState(1)
-	let url2 = 'https://rhino-backend.up.railway.app'
+	// let url2 = 'https://rhino-backend.up.railway.app'
+	let url2 = '127.0.0.1:8000'
 	let dispatch = useDispatch()
 	let cartid = useId()
     console.log("post",data)
@@ -77,7 +80,7 @@ const MainPost = ({data,open,num}) => {
 			   	
 			   
 				<div className="picture">
-					<img src={`${url2}${data.image}`} alt="" className="post-image"/>
+					<img src={`//${url2}${data.image}`} alt="" className="post-image"/>
 				</div>
 				<div className="text">
 				     <div className="described">
@@ -190,10 +193,14 @@ const ReviewSlide=({data,open,setOpen,setImages,setNum,num})=>{
 
 const Review = ({data,setNum,setImages}) =>{
 	let [image,setImage] = useState(null)
-	
-	let url = 'https://rhino-backend.up.railway.app/review/images/'
-	let base_url = 'https://rhino-backend.up.railway.app'
-    console.log(data,'data')
+	let context = useContext(Context)
+	let userid = context.user?context.user.user_id:0
+	console.log(userid,'usr')
+	// let url = 'https://rhino-backend.up.railway.app/review/images/'
+	// let base_url = 'https://rhino-backend.up.railway.app'
+	let url = '//127.0.0.1:8000/review/images/'
+	let base_url = '//127.0.0.1:8000/'
+    console.log(data.creater_id,'data')
     useEffect(() => {
     	axios.post(url,{'id':data.id})
     	.then((response)=>{
@@ -205,6 +212,17 @@ const Review = ({data,setNum,setImages}) =>{
 
     	})
     }, [])
+    let deleteUrl =  '//127.0.0.1:8000/delrev/' 
+    let deleteRev = () =>{
+    	console.log(data.id)
+       axios.post(deleteUrl,{'id':data.id})
+       .then((response)=>{
+       	console.log(response.data)
+       })
+       .catch((err)=>{
+       	console.log(err)
+       })
+    }
 	return(
       <div className="container-rev">
       	<div className="pfp">
@@ -223,6 +241,9 @@ const Review = ({data,setNum,setImages}) =>{
       		<div className="writing">
       			{data.review}
       		</div>
+      		{userid==data.creater_id?(
+      		<img onClick={deleteRev} className='delete' src="images/delete.png" alt=""/>
+      		):''}
       		<div className="images">
       			{image?image.map((img,i)=>{
       				console.log(i)
@@ -241,10 +262,11 @@ const Review = ({data,setNum,setImages}) =>{
       				)
       			})
       		    :
-      		    "hi"
+      		    ""
       		   }
       		</div>
       	</div>
+      	
       	
 
       </div>
