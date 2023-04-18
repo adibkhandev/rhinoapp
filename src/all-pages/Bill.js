@@ -131,7 +131,7 @@ const Bill = () => {
 							     </h1>
 							   	
 							    </div>
-							    <Taka num={"mini"} taka={bill+(bill*0.15)} ></Taka>
+							    <Taka num={"mini"} taka={bill+(bill*0.15)+50} ></Taka>
 							  </div>
 						</div>
 					</div>
