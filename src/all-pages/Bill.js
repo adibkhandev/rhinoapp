@@ -9,7 +9,7 @@ import Context from './Context'
 import axios from 'axios'
 const Bill = () => {
 	let list = [0,1,2,3]
-	
+	let [total,setTotal]=useState(0)
 	let data = useSelector((state)=> state.cartState.data)
 	let url = 'https://rhino-backend.up.railway.app/orderplace/'
 	let url2 = 'https://rhino-backend.up.railway.app'
@@ -39,6 +39,7 @@ const Bill = () => {
 			 <div className="bill">
 				<div className="items">
 					{data.map((dataItems,i)=>{
+
 						return(
                               <div className="item">
                               	<div className="image">
@@ -89,11 +90,11 @@ const Bill = () => {
 							    	Subtotal
 							     </h1>
 						         <h1 className="colon">
-								  :
+								  : 
 							     </h1>
 							  	
 							     </div>
-                                  <Taka num={"mini"} taka={"220"} ></Taka>							  
+                                  <Taka num={"mini"} taka={bill} ></Taka>							  
                                  </div>
 
 							   <div className="title">
@@ -106,7 +107,7 @@ const Bill = () => {
 							     </h1>
 							   	
 							    </div>
-							    <Taka num={"mini"} taka={"220"} ></Taka>
+							    <Taka num={"mini"} taka={"50"} ></Taka>
 							  </div>
 							   <div className="title">
 							   <div className="joined">
@@ -118,7 +119,7 @@ const Bill = () => {
 							     </h1>
 							   	
 							    </div>
-							    <Taka num={"mini"} taka={"220"} ></Taka>
+							    <Taka num={"mini"} taka={bill*0.15} ></Taka>
 							  </div>
 							   <div className="title">
 							   <div className="joined">
@@ -130,7 +131,7 @@ const Bill = () => {
 							     </h1>
 							   	
 							    </div>
-							    <Taka num={"mini"} taka={"220"} ></Taka>
+							    <Taka num={"mini"} taka={bill+(bill*0.15)} ></Taka>
 							  </div>
 						</div>
 					</div>

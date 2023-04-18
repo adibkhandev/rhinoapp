@@ -87,7 +87,7 @@ const MainPost = ({data,open,num,setAvailable,setOpen}) => {
 			   	
 			  
 				<div className="picture">
-					<img src={`//${url2}${data.image}`} alt="" className="post-image"/>
+					<img src={`${url2}${data.image}`} alt="" className="post-image"/>
 				</div>
 				<div className="text">
 				     <div className="described">
