@@ -4,9 +4,10 @@ import axios from 'axios'
 import Context from './Context'
 let array = [0,1,2,3] 
 const MostPopular = () => {
-    
-     let url =    'http://127.0.0.1:8000/ranker'
-	let image_url = 'http://127.0.0.1:8000/'
+    let url = 'https://rhino-backend.up.railway.app/ranker'
+    let image_url = 'https://rhino-backend.up.railway.app/'
+     // let url =    'http://127.0.0.1:8000/ranker'
+	// let image_url = 'http://127.0.0.1:8000/'
 	let context = useContext(Context)
 	let setResult = context.setresult
 	let setLoading = context.setloading
@@ -86,7 +87,8 @@ const MostPopular = () => {
 
 
 let Item = ({item}) =>{
-	let image_url = 'http://127.0.0.1:8000'
+	// let image_url = 'http://127.0.0.1:8000'
+	let image_url = 'https://rhino-backend.up.railway.app'
 	let [visible,setVisible] = useState(false)
 	let cardRef = useRef(null)
 	let callback = entries =>{

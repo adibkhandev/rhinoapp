@@ -74,7 +74,7 @@
 	
 	width: 100vw;
 	background: rgb(221,214,243);
-  background: linear-gradient(90deg, rgba(221,214,243,1) 25%, rgba(250,172,168,1) 100%);
+  background: linear-gradient(90deg, #FFA4ED 25%, #FFDDEC 100%);
 }
 .reg-background{
 overflow: hidden;
@@ -82,7 +82,7 @@ overflow: hidden;
 	height: 100vh;
 	width: 100vw;
   background: rgb(250,172,168);
-  background: linear-gradient(90deg, rgba(250,172,168,1) 25%, rgba(221,214,243,1) 100%);
+  background: linear-gradient(90deg, #FFDDEC 25%, #FFA4ED  100%);
 }
 #logregpage{
 	position: relative;
@@ -122,7 +122,7 @@ overflow: hidden;
     transition: 1.2s cubic-bezier(.69,.17,.29,.87);
 	}
 	.headline{
-	@include FancyFont(clamp(2.6rem,3vw,3.2rem),100);
+	@include FancyFont(clamp(2rem,2.6vw,3rem),100);
 	margin-bottom:0.8em ;
 }
 .inputs{
@@ -148,7 +148,7 @@ overflow: hidden;
 
 	input{
 		//
-		font-size: clamp(0.78rem,1vw,0.96rem);
+		font-size: clamp(0.78rem,0.8vw,0.96rem);
 		//
 	color: white;
 	border-radius: 40px;
@@ -192,7 +192,7 @@ overflow: hidden;
 
 	button{
 		//
-		font-size: clamp(0.7rem,0.82vw,0.9rem);
+		font-size: clamp(0.5rem,0.7vw,0.9rem);
 		//
 		width: 14em;
 		height: 5em;
@@ -266,7 +266,7 @@ overflow: hidden;
 	margin-bottom: 1em;
 	color: white;
 	//
-	@include Font(clamp(0.7rem,0.82vw,0.9rem),400);
+	@include Font(clamp(0.7rem,0.7vw,0.9rem),400);
 	//
 	opacity: 0.8;
 }

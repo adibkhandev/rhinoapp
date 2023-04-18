@@ -85,7 +85,7 @@ let GeoMap = ()=> {
   }
 
   let changeAdress = () =>{
-    let url = 'http://127.0.0.1:8000/update/'
+    let url =  'https://rhino-backend.up.railway.app/update/'
     axios.post(url,{id:id,adress:adress})
     .then((response)=>{
       console.log(response.data)

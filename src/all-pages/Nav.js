@@ -63,7 +63,8 @@ export const Nav = (props) => {
 
 export let SearchEngine = ({setSearch,searchon,ase}) =>{
      let location = useLocation() 
-	let url = '127.0.0.1:8000/'
+	// let url = '127.0.0.1:8000/'
+	let url = 'https://rhino-backend.up.railway.app'
 	// let url = 'https://rhino-backend.up.railway.app/search/'
 	let [searchtext,setSearchtext]=useState('')
 	// let handleSubmit=()=>{
@@ -106,8 +107,8 @@ let IconNav =(props)=>{
 	let [scrollDirection,setScrollDirection] = useState('')
 	let [pastPosition,setPastPosition] = useState(0)
 	let notifications = useSelector((state)=> state.notifyState.notifications)
-	let url = 'http://127.0.0.1:8000'
-	// let url = 'https://rhino-backend.up.railway.app'
+	// let url = 'http://127.0.0.1:8000'
+	let url = 'https://rhino-backend.up.railway.app'
 	 let location = useLocation() 
      let scroller = () =>{
          let scroll = window.scrollY

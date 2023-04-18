@@ -77,9 +77,9 @@ const Results=({results,loading})=>{
 	)
 }
 const Card =({result})=>{
-	// let url2 = 'https://rhino-backend.up.railway.app'
+	let url2 = 'https://rhino-backend.up.railway.app'
 	let context = useContext(Context)
-	let url2 = 'http://127.0.0.1:8000'
+	// let url2 = 'http://127.0.0.1:8000'
 	let dispatch = useDispatch()
 	let navigate = useNavigate()
 	console.log(result.rev,'revv')

@@ -11,10 +11,10 @@ const Bill = () => {
 	let list = [0,1,2,3]
 	
 	let data = useSelector((state)=> state.cartState.data)
-	// let url = 'https://rhino-backend.up.railway.app/orderplace/'
-	// let url2 = 'https://rhino-backend.up.railway.app'
-	let url = 'http://127.0.0.1:8000/orderplace/'
-	let url2 = 'http://127.0.0.1:8000'
+	let url = 'https://rhino-backend.up.railway.app/orderplace/'
+	let url2 = 'https://rhino-backend.up.railway.app'
+	// let url = 'http://127.0.0.1:8000/orderplace/'
+	// let url2 = 'http://127.0.0.1:8000'
 	let context = useContext(Context)
 	let bill = context.biller
 	console.log("bill",data)

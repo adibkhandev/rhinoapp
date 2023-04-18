@@ -7,8 +7,8 @@ import axios from 'axios'
 import Context from './Context'
 import {useNavigate} from 'react-router-dom'
 const Post =(props)=>{
-	// let base_url = 'https://rhino-backend.up.railway.app'
-	let base_url = '127.0.0.1:8000'
+	let base_url = 'https://rhino-backend.up.railway.app'
+	// let base_url = '127.0.0.1:8000'
 	let [available,setAvailable] = useState(0)
 	let store = useSelector((state)=> state.data)
 	let [open,setOpen]=useState(false)
@@ -72,8 +72,8 @@ const Post =(props)=>{
 const MainPost = ({data,open,num,setAvailable,setOpen}) => {
 	let [count,setCount]=useState(1)
 
-	// let url2 = 'https://rhino-backend.up.railway.app'
-	let url2 = '127.0.0.1:8000'
+	let url2 = 'https://rhino-backend.up.railway.app'
+	// let url2 = '127.0.0.1:8000'
 	let dispatch = useDispatch()
 	let cartid = useId()
     console.log("post",data)
@@ -210,10 +210,10 @@ const Review = ({data,setNum,setImages}) =>{
 	let navigate = useNavigate()
 	
 	console.log(userid,'usr')
-	// let url = 'https://rhino-backend.up.railway.app/review/images/'
-	// let base_url = 'https://rhino-backend.up.railway.app'
-	let url = '//127.0.0.1:8000/review/images/'
-	let base_url = '//127.0.0.1:8000/'
+	let url = 'https://rhino-backend.up.railway.app/review/images/'
+	let base_url = 'https://rhino-backend.up.railway.app'
+	// let url = '//127.0.0.1:8000/review/images/'
+	// let base_url = '//127.0.0.1:8000/'
     console.log(data.creater_id,'data')
     useEffect(() => {
     	axios.post(url,{'id':data.id})
@@ -226,7 +226,8 @@ const Review = ({data,setNum,setImages}) =>{
 
     	})
     }, [])
-    let deleteUrl =  '//127.0.0.1:8000/delrev/' 
+    // let deleteUrl =  '//127.0.0.1:8000/delrev/' 
+    let deleteUrl = 'https://rhino-backend.up.railway.app/delrev/'
     let deleteRev = () =>{
     	console.log(data.id)
        axios.post(deleteUrl,{'id':data.id})

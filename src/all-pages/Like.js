@@ -10,10 +10,10 @@ let Like =({product,id,liked})=>{
    let context = useContext(Context)
    let userid = context.user? context.user.user_id : null
    let [like,setLike]= useState(liked?true:false)
-   let url = 'http://127.0.0.1:8000/like/'
-   let url2 = 'http://127.0.0.1:8000/dislike/'
-   // let url = 'https://rhino-backend.up.railway.app/like/'
-   // let url2 = 'https://rhino-backend.up.railway.app/dislike/'
+   // let url = 'http://127.0.0.1:8000/like/'
+   // let url2 = 'http://127.0.0.1:8000/dislike/'
+   let url = 'https://rhino-backend.up.railway.app/like/'
+   let url2 = 'https://rhino-backend.up.railway.app/dislike/'
    let likes = context.userdata? context.userdata.liked : null
    useEffect(() => {
       console.log(likes,id,'kkk')
