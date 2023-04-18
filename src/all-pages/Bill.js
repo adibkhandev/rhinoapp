@@ -1,13 +1,18 @@
-import React,{useState,useContext} from 'react'
+import React,{useState,useContext,useEffect} from 'react'
 import {useSelector,useDispatch} from 'react-redux'
 import Navigation from './Navigation-ash'
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
 import {Nav} from './Nav'
 import {Taka} from "./Components"
 import Counter from './Counter'
 import Context from './Context'
 import axios from 'axios'
 const Bill = () => {
+    useEffect(() => {
+    	if(!data){
+    		navigate('/')
+    	}
+    }, )
 	let list = [0,1,2,3]
 	let [total,setTotal]=useState(0)
 	let data = useSelector((state)=> state.cartState.data)
@@ -18,7 +23,7 @@ const Bill = () => {
 	let context = useContext(Context)
 	let bill = context.biller
 	console.log("bill",data)
-	let id = context.user.user_id || null
+	let id = context.userdata.id || null
 	let products = data.map((items)=>{
 		return {
 			"id":items.product.id,
@@ -27,6 +32,7 @@ const Bill = () => {
 	})
 	console.log(products)
 	let [billed,setBilled]=useState(false)
+	let navigate = useNavigate()
 	return (
 		<>
 		<div className={billed?"total-bill center":"total-bill"}>

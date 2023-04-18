@@ -16,12 +16,12 @@ export let AuthProvider = ({children}) =>{
     let [loading,setLoading] = useState(true)
     let [board,setBoard]=useState(null)
     let [biller,setBiller] = useState(0)
-    let [user,setUser]=useState(JSON.parse(localStorageUserData)|| null)
+    let [user,setUser]=useState(JSON.parse(localStorage.getItem('userdata'))|| null)
     let navigate = useNavigate()
-    let [refresh,setRefresh] = useState(JSON.parse(localStorageRefresh)|| null)
-	const [token, setToken] = useState(JSON.parse(localStorageAccess) || null)
+    let [refresh,setRefresh] = useState(JSON.parse(localStorage.getItem('refreshtoken'))|| null)
+	const [token, setToken] = useState(JSON.parse(localStorage.getItem('usertoken')) || null)
 	//contains user id
-	let [data,setData]= useState(JSON.parse(localStorageUser)||null)
+	let [data,setData]= useState(JSON.parse(localStorage.getItem('user'))||null)
 	//
 	// console.log(localStorageAccess,'access')
 	// console.log(JSON.parse(localStorage.getItem('refreshtoken')),'refresh')
@@ -32,6 +32,7 @@ export let AuthProvider = ({children}) =>{
 	// console.log(search)
 	let lifespan = 1000 * 60 * 4
 	let url = 'https://rhino-backend.up.railway.app/api/token/refresh/'
+	// let url = 'http://127.0.0.1:8000/api/token/refresh/'
 	let liked_url = 'https://rhino-backend.up.railway.app/liked/'
 	let user_url = 'https://rhino-backend.up.railway.app/userdata/'
 	// let user_url = 'http://127.0.0.1:8000/userdata/'
@@ -75,11 +76,11 @@ export let AuthProvider = ({children}) =>{
     	if(data){
              axios.post(user_url,{"id":data.user_id})
     		 .then((response)=>{
-    		 	// console.log('chaaaaaaa')
-    		 	// console.log(response.data)
+    		 	console.log(response.data,'chaaaaaaa')
+
                 setUser(response.data)
-                localStorage.setItem('userdata',JSON.stringify(user))
-                // console.log(user,'is it')
+                localStorage.setItem('userdata',JSON.stringify(response.data))
+                console.log(JSON.parse(localStorage.getItem('userdata')),'is it')
                 // console.log('chaaaa')
     		 })
     		 .catch((err)=>{
@@ -193,7 +194,7 @@ useEffect(() => {
 }, [search,category,offer,board])
 
 
-
+    //sets user data **
     // console.log(token,'t')
 	let usersetter=(token)=>{
 		let userdata = jwt_decode(token.access)
