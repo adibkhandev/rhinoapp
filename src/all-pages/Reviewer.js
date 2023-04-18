@@ -3,7 +3,7 @@ import {Nav} from './Nav'
 import {Taka,Stars} from "./Components"
 import axios from 'axios'
 import Navigation from './Navigation-ash'
-import {useLocation,Link} from 'react-router-dom'
+import {useLocation,Link,useNavigate} from 'react-router-dom'
 import Context from './Context'
 import ImagePoster from './ImagePoster'
 
@@ -14,7 +14,7 @@ const Reviewer = () => {
         let user_data = context.user || null
         /*let userid = id.user_id || 28*/
         let userid = 28
-
+        let navigate = useNavigate()
 
         // let url = 'https://rhino-backend.up.railway.app/addrev/'
 	// let url2 = 'https://rhino-backend.up.railway.app/'
@@ -59,6 +59,8 @@ const Reviewer = () => {
         	    .then((response)=>{
         	       console.log(sender,'sending this')
                        console.log(response.data)
+                       navigate('/')
+                       window.location.reload(false)
         	    })
         	    .catch((err)=>{
                         console.log(err)
@@ -140,12 +142,12 @@ const Reviewer = () => {
                                 </div>
 			   </div>
 				<div className="btn-1">
-				        <Link to="/post" state={data} >
+				        
 				        	
 					<button onClick={postHandler} >
 						Post review
 					</button>
-				        </Link>
+				        
 				</div>
 				
 			</div>

@@ -7,7 +7,8 @@ import {Taka} from "./Components"
 import Counter from './Counter'
 import Context from './Context'
 const Order = () => {
-let url = 'https://rhino-backend.up.railway.app/ordered/'
+// let url = 'https://rhino-backend.up.railway.app/ordered/'
+let url = 'http://127.0.0.1:8000/ordered/'
 let context = useContext(Context)
 console.log(context.user.user_id)
 let userid = context.user? context.user.user_id : false
@@ -23,7 +24,7 @@ useEffect(() => {
                )
           })
           setOrderedData(response.data.ordered.slice().reverse())
-          console.log(orderedData)
+          console.log(orderedData,'orderrr')
        })
        .catch((err)=>{
           console.log(err)
@@ -44,7 +45,7 @@ useEffect(() => {
 
            	 	{orderedData?orderedData.map((orders,i)=>{
                         return(
-                           <Ordercomp data={orders} ></Ordercomp>
+                           <Ordercomp className='order-cont-comp' data={orders} ></Ordercomp>
                          )             
                     }  
            	)

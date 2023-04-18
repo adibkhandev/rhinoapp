@@ -29,7 +29,7 @@ let Landing = ({setSearch})=>{
   return(
     <>
     <div   className="land">
-      <Nav  setSearch={setSearch}  stick={true} ase={true} searchon={searchon?true:false} visible={isout} colour={'white'} ></Nav>
+      <Nav  setSearch={setSearch}  stick={true} ase={true} searchon={searchon?true:false} visible={true} colour={'white'} ></Nav>
      <Home setsearch={SetSearch} searchon={searchon} ase={true} scrolling={setSearchon} referer={setIsout}  ></Home>
      <RunningOut  ></RunningOut>
      <MostPopular ></MostPopular>
@@ -43,24 +43,24 @@ let Home =(props)=>{
   let [buttonthere,setButtonthere] = useState(true)
   let myref = useRef();
 
-   useEffect(() => {
+  //  useEffect(() => {
      
      
 
 
     
-    return () => {
-      let observer = new IntersectionObserver ((entries,options)=>{
-        let entry = entries[0];
-        props.referer(entry.isIntersecting)
-        console.log(entry)
+  //   return () => {
+  //     let observer = new IntersectionObserver ((entries,options)=>{
+  //       let entry = entries[0];
+  //       props.referer(entry.isIntersecting)
+  //       console.log(entry)
 
-      })
-      if(myref.current){
-      observer.observe(myref.current)
-  }
-        }
-  }, [])
+  //     })
+  //     if(myref.current){
+  //     observer.observe(myref.current)
+  // }
+  //       }
+  // }, [])
 
    let scroller=()=>{
      if(window.scrollY>400){
@@ -84,14 +84,14 @@ let Home =(props)=>{
          
            <div  ref={myref} className="hero-section">
            <div className="parts" id="part1">
-             <Heading>
+            {/* <Heading>
          
-           </Heading>
+           </Heading>*/}
            </div>
            <div className="parts" id="part2">
-             <Popup >
+            {/* <Popup >
          
-           </Popup>
+           </Popup>*/}
            </div>
              
            

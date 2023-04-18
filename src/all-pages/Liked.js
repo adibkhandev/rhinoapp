@@ -1,4 +1,5 @@
 import React,{useState,useEffect,useContext} from 'react'
+import {useDispatch,useSelector} from 'react-redux'
 import axios from 'axios'
 import Context from './Context'
 import {Nav} from './Nav'
@@ -16,11 +17,19 @@ const Liked = () => {
 	}
    let context = useContext(Context)
    let likes = context.userdata? context.userdata.liked : null
-	
+   let notifications = useSelector((state)=>state.notifyState.notifications)
+   let dispatch = useDispatch()
     let list = [0,1,2,3,4]
     
     let [hover,setHover]=useState(0)
-    console.log(likes,'llll')
+    useEffect(() => {
+    	// window.location.reload(false)
+    	if(notifications.liked>0){
+            dispatch({type:"NULLIFY-LIKE"})
+    		window.location.reload(false)
+    	}
+    }, [notifications])
+    console.log(context,'llll')
 	return (
 		<>
 	<div className="liked-page">

@@ -39,16 +39,20 @@ let setCategory = context.set_category
 
            <div className="second-row">
            	<div onClick={()=>setCategory('novel')} id="box-3" className="boxes">
+             <Link to="/searched" >
             <img src="images/asta.jpg" alt=""/>
             <h1>NOVEL</h1>
+            </Link>
            </div>
            </div>
 
       </div>
       <div className="right-side">
       	<div onClick={()=>setCategory('lamps')} id="box-4" className="boxes">
+              <Link to="/searched" >
              <img src="images/dabi.jpg" alt=""/>
              <h1>LAMPS</h1>
+             </Link>
          </div>
       </div>
             
@@ -58,11 +62,15 @@ let setCategory = context.set_category
         
         <div className="bottom">
         	<div onClick={()=>setCategory('accessories')}  id="box-5" className="boxes">
-         <img src="images/kaneki.jpg" alt=""/>
-         <h1>ACCESSORIES</h1>
-        </div>
+          <Link to="/searched" >
+           <img src="images/kaneki.jpg" alt=""/>
+           <h1>ACCESSORIES</h1>
+          </Link>
+          </div>
         <div onClick={()=>setCategory('action_figures')}  id="box-6" className="boxes">
+          <Link to="/searched" >
          <img src="images/tanjiro.jpg" alt=""/>
+         </Link>
          <h1>ACTION FIGURES</h1>
         </div>
         </div>

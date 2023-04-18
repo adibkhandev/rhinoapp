@@ -193,3 +193,17 @@
 		transform: rotate(4320deg);
 	}
 }
+@keyframes logreg-notify {
+    0%{
+    	top: -100vh;
+    }
+    30%{
+    	top: 0vh;
+    }
+    80%{
+    	top: 0vh;
+    }
+    100%{
+    	top: -100vh;
+    }
+}

@@ -2,6 +2,7 @@ import React , {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import Star from './Stars'
 import {Link} from "react-router-dom"
+import Like from "./Like"
 export let Filter =({start,setStart,limit,setLimit})=>{
    return(
    <>
@@ -101,7 +102,7 @@ export let NotFound = () =>{
    return(
       <div className="container">
          <img src="images/cat.png" alt=""/>
-         <h1>Cat found nothing by that name</h1>
+         {/*<h1>Cat found nothing by that name</h1>*/}
       </div>
    )
 }
@@ -116,7 +117,8 @@ export let Item = (props)=>{
        }
     })
    let data = props.data
-   let url = 'https://rhino-backend.up.railway.app'
+   let url = 'http://127.0.0.1:8000'
+   // let url = 'https://rhino-backend.up.railway.app'
    let dispatch = useDispatch()
    return(
            <div className="item-cont" >
@@ -129,9 +131,7 @@ export let Item = (props)=>{
                </div>
                              
                <Taka num={"one"} taka={props.data.price} ></Taka>
-               <div onClick={()=>setLiked(true)} className="like">
-                <img  src={liked?"images/liked.svg":"images/like.png"} alt=""/>
-               </div>
+                <Like product={props.data} id={props.data.id} ></Like>
                                     
                
              </div>
@@ -139,10 +139,15 @@ export let Item = (props)=>{
              <div className="hoverer" >               
                <div className="cont">
                   <Link to='/cart'>
-                   <div onClick={() => dispatch({type: 'ADD' , payload:data ,count:1})} className="content">
+                   <div onClick={() => {
+                   dispatch({type: 'ADD' , payload:data ,count:1}) 
+                   dispatch({type:'ADD-CART'})
+                   }}
+
+                   className="content">
                   <h1  >Add to Cart</h1>
                   <div className="imgs">
-                     <img src="images/grocery-cart.png" alt=""/>
+                     <img className="cart-icon" src="images/grocery-cart.png" alt=""/>
                      <img className="plus" src="images/plus.svg" alt=""/>
                   </div>
                    </div>

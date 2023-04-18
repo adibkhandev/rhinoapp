@@ -1,7 +1,8 @@
 import React,{useState,useContext} from 'react'
 import {useDispatch} from 'react-redux'
 import {Nav} from './Nav'
-import {Link} from "react-router-dom"
+import {Link,useNavigate} from "react-router-dom"
+import {SearchEngine} from './Nav'
 import {Taka,FixedStars,Filter,NotFound} from "./Components"
 import Like from './Like'
 import Context from './Context'
@@ -9,9 +10,12 @@ const  Searched = () => {
 	let context = useContext(Context)
 	let results = context.search_result
 	let loading = context.loading
+	let setSearch = context.setsearch
 	console.log(results,'achieved')
 	return (
 		<>
+		<div className="pg">
+			
         <div className="searched-page">
          
          
@@ -21,11 +25,22 @@ const  Searched = () => {
          	  <>	
         	  <Nav stick={false} ase={true} searchon={true} visible={true} colour={'ash'}></Nav>
               <Results loading={loading} results={results} > </Results>
+           
               </>
               
          }        
          	
         </div> 
+        <div className="conter">
+         <SearchEngine
+            ase={true}
+            searchon={true}
+            setSearch={setSearch}
+            >
+          </SearchEngine>
+        	
+        </div>
+		</div>
 		</>
 	)
 }
@@ -62,8 +77,11 @@ const Results=({results,loading})=>{
 	)
 }
 const Card =({result})=>{
-	let url2 = 'https://rhino-backend.up.railway.app'
+	// let url2 = 'https://rhino-backend.up.railway.app'
+	let context = useContext(Context)
+	let url2 = 'http://127.0.0.1:8000'
 	let dispatch = useDispatch()
+	let navigate = useNavigate()
 	console.log(result.rev,'revv')
 	let Totalrating = [0]
 	let rate = result.rev.map((item)=>{
@@ -93,9 +111,20 @@ const Card =({result})=>{
                   {star?<FixedStars star={star} ></FixedStars>:<FixedStars ></FixedStars>}
             	    
                    	<div className="cart-like">
-                   	    <Link to="/cart">
-                   		<h1 onClick={()=>dispatch({type: 'ADD' , payload:result ,count:1})} >Add tocart</h1>
-                   	    </Link>
+                   	    
+                   		<h1 onClick={()=>{
+                          if(context.userdata){
+                   		  dispatch({type: 'ADD' , payload:result ,count:1}) 
+                   		  dispatch({type:'ADD-CART'})
+                          }
+                          else{
+                           navigate('/login')
+                          }
+                   		}}>
+                   		Add tocart
+
+                   		</h1>
+                   	    
                    	   
                          <Like product={result} id={result.id} ></Like>
                          

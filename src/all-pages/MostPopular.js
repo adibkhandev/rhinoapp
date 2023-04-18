@@ -94,13 +94,16 @@ let Item = ({item}) =>{
 		     if(entry){
 
          setVisible(entry.isIntersecting)
-         console.log(visible,'is')
+         console.log(visible,'issss')
+		     }
+		     else{
+		     	console.log('no')
 		     }
 	}
 	let options = {
 		root:null,
 		rootMargin:'0px',
-		threshold:0.75
+		threshold:0.6
 	}
 	useEffect(() => {
 		let observer = new IntersectionObserver(callback,options)

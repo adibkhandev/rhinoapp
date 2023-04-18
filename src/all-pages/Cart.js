@@ -9,9 +9,18 @@ import {Link} from "react-router-dom"
 const Cart = () => {
 	
 	// let [biller,setBiller]=useState(0)
-	let data = useSelector((state)=> state.data)
 	let [amount,setAmount]=useState(0)
-
+     let [hover,setHover]=useState(0)
+	let data = useSelector((state)=> state.cartState.data)
+     let notifications = useSelector((state)=>state.notifyState.notifications)
+     let dispatch = useDispatch()
+    useEffect(() => {
+    	// window.location.reload(false)
+    	if(notifications.cart>0){
+            dispatch({type:"NULLIFY-CART"})
+    		
+    	}
+    }, [notifications])
 	useEffect(() => {
 		if(data){
 			let total = data.map((item)=>{
@@ -28,7 +37,6 @@ const Cart = () => {
 	let context = useContext(Context)
 	let biller = context.biller
 	let setBiller = context.setBiller
-	let dispatch = useDispatch()
 	let dispatcher = () => {
 		dispatch({type:"ADD"})
 	}
@@ -121,8 +129,8 @@ let Item = ({items,biller,setBiller,i})=>{
           	</div>
           	<div  className="remover">
           		<div onClick={()=>{
-                setBiller(biller-subtotal)
-          		dispatch({type:'DELETE',payload:items})
+                      setBiller(biller-subtotal)
+          		  dispatch({type:'DELETE',payload:items})
           		}
           	} className="btn">
           			<img src="images/close.png" alt=""/>

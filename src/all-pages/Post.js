@@ -5,9 +5,11 @@ import {useLocation} from 'react-router-dom'
 import {Link} from "react-router-dom"
 import axios from 'axios'
 import Context from './Context'
+import {useNavigate} from 'react-router-dom'
 const Post =(props)=>{
 	// let base_url = 'https://rhino-backend.up.railway.app'
 	let base_url = '127.0.0.1:8000'
+	let [available,setAvailable] = useState(0)
 	let store = useSelector((state)=> state.data)
 	let [open,setOpen]=useState(false)
 	let [num,setNum] = useState(null)
@@ -16,12 +18,13 @@ const Post =(props)=>{
 	console.log(store)
 	let location = useLocation()
 	let data = location.state
-	console.log(data)
+	console.log(available,'avvaaasa')
+
 	return(
 		<div className="post-page">
-			<MainPost num={num} open={open} data={data} ></MainPost>
-			<WriteReview  data={data} ></WriteReview>
-			<ReviewSlide num={num}  setImages={setImages} setNum={setNum} open={open} setOpen={setOpen} data={data}></ReviewSlide>
+			<MainPost setOpen={setOpen} setAvailable={setAvailable} num={num} open={open} data={data} ></MainPost>
+			<WriteReview   data={data} ></WriteReview>
+			<ReviewSlide available={available} setAvailable={setAvailable} num={num}  setImages={setImages} setNum={setNum} open={open} setOpen={setOpen} data={data}></ReviewSlide>
 			{num!=null?(
       	    <div
              onClick={()=>{
@@ -66,8 +69,9 @@ const Post =(props)=>{
     
 	)
 }
-const MainPost = ({data,open,num}) => {
+const MainPost = ({data,open,num,setAvailable,setOpen}) => {
 	let [count,setCount]=useState(1)
+
 	// let url2 = 'https://rhino-backend.up.railway.app'
 	let url2 = '127.0.0.1:8000'
 	let dispatch = useDispatch()
@@ -76,9 +80,12 @@ const MainPost = ({data,open,num}) => {
     console.log(num,'sdffdsfjoal')
 	return (
 		     <>
-			   <div id={num!=null?'blur':''} className={open?"post reve":"post revless"}>
+			   <div onClick={()=>{
+			   	setAvailable(0)
+			   	setOpen(false)
+			   }} id={num!=null?'blur':''} className={open?"post reve":"post revless"}>
 			   	
-			   
+			  
 				<div className="picture">
 					<img src={`//${url2}${data.image}`} alt="" className="post-image"/>
 				</div>
@@ -101,7 +108,12 @@ const MainPost = ({data,open,num}) => {
 					<div className="buttons">
 						<div className="add">
 						<Link to='/cart'>
-						 <button  onClick={() => dispatch({ id:cartid , type: 'ADD' , payload:data ,count:count})}  className="add">
+						 <button  onClick={() => {
+						 	   dispatch({ id:cartid , type: 'ADD' , payload:data ,count:count})
+						 	   dispatch({type:'ADD-CART'})
+						 	}}
+						 	className="add"
+						 	>
 							Add to cart
 						 </button>
 							
@@ -149,10 +161,10 @@ const WriteReview=({data})=>{
        </>
 	)
 }
-const ReviewSlide=({data,open,setOpen,setImages,setNum,num})=>{
+const ReviewSlide=({data,open,setOpen,setImages,setNum,num,available,setAvailable})=>{
 	let [reviews,setReviews] = useState()
-	console.log(data.rev,'dsfdslkjfs')
-	let [available,setAvailable] = useState(0)
+	console.log(available,'dsfdslkjfs')
+
     
 	return(
 <>
@@ -195,6 +207,8 @@ const Review = ({data,setNum,setImages}) =>{
 	let [image,setImage] = useState(null)
 	let context = useContext(Context)
 	let userid = context.user?context.user.user_id:0
+	let navigate = useNavigate()
+	
 	console.log(userid,'usr')
 	// let url = 'https://rhino-backend.up.railway.app/review/images/'
 	// let base_url = 'https://rhino-backend.up.railway.app'
@@ -218,6 +232,8 @@ const Review = ({data,setNum,setImages}) =>{
        axios.post(deleteUrl,{'id':data.id})
        .then((response)=>{
        	console.log(response.data)
+         navigate('/')
+       	window.location.reload(false);
        })
        .catch((err)=>{
        	console.log(err)

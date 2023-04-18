@@ -30,14 +30,24 @@ const Log = (props) => {
          "password":password
       },config)
       .then((response)=>{
+         if(response.status==200){
          console.log(response.data)
          tokensetter(response.data)
          usersetter(response.data)
          props.func()
+         }
+
          
       })
       .catch((err)=>{
-         console.log(err)
+         if(mail && password){
+         props.setNotifyLog('Login Failed')
+
+         }
+         else{
+            props.setNotifyLog('Please fill up all the fields to proceed')
+         }
+         console.log('sdsa')
       })
    }
     return(

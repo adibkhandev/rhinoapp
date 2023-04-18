@@ -21,13 +21,20 @@ const Reg = (props) => {
    }
    let handleSubmit=(e)=>{
          e.preventDefault()
-         props.func()
          axios.post(url,{data})
            .then((response)=>{
             console.log(response)
+            props.func()
            })
            .catch((err)=>{
             console.log(err)
+            console.log(data.email)
+            if(data.firstname && data.lastname && data.email && data.phonenumber && data.password && data.adress){
+              props.setNotifyReg('Email is already linked to an account')
+            }
+            else{
+                props.setNotifyReg('Please fill up all the fields to proceed')
+            }
            })
    }
     return(

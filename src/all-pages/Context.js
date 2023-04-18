@@ -33,8 +33,10 @@ export let AuthProvider = ({children}) =>{
 	let lifespan = 1000 * 60 * 4
 	let url = 'https://rhino-backend.up.railway.app/api/token/refresh/'
 	let liked_url = 'https://rhino-backend.up.railway.app/liked/'
-	let user_url = 'https://rhino-backend.up.railway.app/userdata/'
-	let search_url = 'https://rhino-backend.up.railway.app/search/'
+	// let user_url = 'https://rhino-backend.up.railway.app/userdata/'
+	let user_url = 'http://127.0.0.1:8000/userdata/'
+	// let search_url = 'https://rhino-backend.up.railway.app/search/'
+	let search_url = 'http://127.0.0.1:8000/search/'
 	let search_url_cat = 'https://rhino-backend.up.railway.app/search/cat/'
     // console.log(token,'token')
 
@@ -136,6 +138,7 @@ useEffect(() => {
 		setRefresh(JSON.parse(localStorageRefresh))
      if(token){
      	let userdata = jwt_decode(token)
+     	console.log(userdata,'datatwatattata')
      	setData(userdata)
      	// console.log(userdata,'data')
      }		

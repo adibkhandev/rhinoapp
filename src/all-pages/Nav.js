@@ -1,10 +1,12 @@
 import React,{useState,useEffect,useContext} from 'react'
+import {useSelector} from 'react-redux'
 import {Link,useLocation} from "react-router-dom"
 import Taka from './Components'
 import axios from 'axios'
 import Context from './Context'
 
 export const Nav = (props) => {
+
 	 let location = useLocation() 
 	 let [searchon,setSearchon] = useState(true)
 	 let list = [0,1,2]
@@ -61,7 +63,8 @@ export const Nav = (props) => {
 
 export let SearchEngine = ({setSearch,searchon,ase}) =>{
      let location = useLocation() 
-	let url = 'https://rhino-backend.up.railway.app/search/'
+	let url = '127.0.0.1:8000/'
+	// let url = 'https://rhino-backend.up.railway.app/search/'
 	let [searchtext,setSearchtext]=useState('')
 	// let handleSubmit=()=>{
 	// 	axios.post((url),{searched:searchtext})
@@ -102,7 +105,9 @@ export let SearchEngine = ({setSearch,searchon,ase}) =>{
 let IconNav =(props)=>{
 	let [scrollDirection,setScrollDirection] = useState('')
 	let [pastPosition,setPastPosition] = useState(0)
-	let url = 'https://rhino-backend.up.railway.app'
+	let notifications = useSelector((state)=> state.notifyState.notifications)
+	let url = 'http://127.0.0.1:8000'
+	// let url = 'https://rhino-backend.up.railway.app'
 	 let location = useLocation() 
      let scroller = () =>{
          let scroll = window.scrollY
@@ -124,10 +129,13 @@ let IconNav =(props)=>{
         } 
 		
 	})
-	
+	useEffect(() => {
+		console.log(notifications)
+	}, [notifications])
+	console.log(notifications,'no')
 	return(
             <div  className="icon-nav">
-               
+               {/*profile*/}
             	<div  className={"icon-conts"}>
             	 <Link to={props.user?"/account":"/login"} >
                	    <img 
@@ -138,14 +146,31 @@ let IconNav =(props)=>{
                  </Link>
             	
             	</div>
+
+               {/*like*/}
             	<div  className={scrollDirection==="down"?"icon-conts squeeze":"icon-conts"}>
             
                 <Link to={props.user?"/liked":"/login"} >
+                {notifications.liked>0?(
+                 <div className="notify">
+                 	{notifications.liked}
+                 </div>
+                 ):''}
             	  <img src={location.pathname=='/'?`/rhinoapp/images/love-${props.color}.png`:`images/love-${props.color}.png`} alt=""/>
                 </Link>
             	</div>
+
+               
+               {/*cart*/}
+
             	<div  className={scrollDirection==="down"?"icon-conts squeeze":"icon-conts"}>
             	<Link to={props.user?"/cart":"/login"} >
+            	 {notifications.cart>0?(
+                 <div className="notify">
+                 	{notifications.cart}
+                 </div>
+                 ):''}
+
             	 <img src={location.pathname=='/'?`/rhinoapp/images/shopping-bag-${props.color}.png`:`images/shopping-bag-${props.color}.png`} alt=""/>
             	 </Link>
             	</div>

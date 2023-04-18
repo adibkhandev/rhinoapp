@@ -1,5 +1,7 @@
 import React,{useState,useEffect,useContext} from 'react'
+import {useNavigate} from 'react-router-dom'
 import Order from './all-pages/Order'
+import GeoMap from './all-pages/GeoMap'
 import Landing from './all-pages/Landing'
 import RunningOut from './all-pages/RunningOut'
 import MostPopular from './all-pages/MostPopular'
@@ -30,6 +32,7 @@ const App = () => {
 //
   useEffect(() => {
     let loading = setTimeout(()=>{
+         
          setLoaded(true)
          console.log('done')
     },4200);
@@ -38,6 +41,8 @@ const App = () => {
         clearTimeout(loading)  
     };
   }, [])
+
+  
 
 //
 
@@ -54,6 +59,7 @@ const App = () => {
                
               <Route path="/" element={<Landing />} ></Route>
               <Route path="/categories" element={<Categories/>} ></Route>
+              <Route path="/map" element={<GeoMap/>} ></Route>
               <Route path="/cart" element={<Cart/>} ></Route>
               <Route path="/post" element={<Post/>} ></Route>
               <Route path="/searched" element={<Searched />} ></Route>

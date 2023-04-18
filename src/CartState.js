@@ -1,9 +1,15 @@
 import { createStore } from "redux";
+import { combineReducers } from 'redux'
 let initialState = {
-	                  data:[]
+	                  data:[],
+	                  notifications:{
+                         liked:0,
+                         cart:0,
+	                  },
 
-                   }
-let reducer=(state=initialState,action)=>{
+                   
+ }
+let cartState=(state=initialState,action)=>{
 	switch(action.type){
 	case "ADD": return {
 		
@@ -73,6 +79,49 @@ let reducer=(state=initialState,action)=>{
 
 }
 
+let notifyState=(state=initialState,action)=>{
+   switch(action.type){
+    case "ADD-LIKE":
+
+      return{
+      	...state,
+      	notifications:{
+      		...state.notifications,
+      		liked:state.notifications.liked+1
+      	}
+
+      } 
+    case "NULLIFY-LIKE":
+    	return{
+    		...state,
+      	notifications:{
+      		...state.notifications,
+      		liked:0
+      	}
+    	}
+     case "ADD-CART":
+
+      return{
+      	...state,
+      	notifications:{
+      		...state.notifications,
+      		cart:state.notifications.cart+1
+      	}
+
+      } 
+    case "NULLIFY-CART":
+    	return{
+    		...state,
+      	notifications:{
+      		...state.notifications,
+      		cart:0
+      	}
+    	}
+   }
+
+ return state
+}
+let reducer = combineReducers({cartState,notifyState})
 let store = createStore(reducer)
 
 export default store

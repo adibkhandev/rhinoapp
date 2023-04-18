@@ -2,7 +2,43 @@
 	width: 100vw;
 	height: 100vh;
 	overflow: hidden;
+	position: relative;
 }
+.notifier{
+	position: absolute;
+	z-index: 5;
+	top: -100vh;
+	opacity: 0.9;
+	background-color: black;
+  display: flex;
+  justify-content: center;
+		align-items: center;
+	height: 100vh;
+	width: 100vw;
+  
+
+	.notify-sec{
+		max-width: 100vw;
+		height: 100vh;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	
+		
+		h1{
+			@include FancyFont(clamp(2.2rem,2.4vw,3rem),300);
+			color: white;
+			text-align: center;
+		}
+	}
+}
+
+.on{
+	animation-name: logreg-notify;
+	animation-duration: 2s;
+	animation-fill-mode: forwards;
+}
+
 #logregpage{
 	height: 100vh;
 	overflow: hidden;
@@ -85,8 +121,7 @@ overflow: hidden;
    
     transition: 1.2s cubic-bezier(.69,.17,.29,.87);
 	}
-}
-.headline{
+	.headline{
 	@include FancyFont(clamp(2.6rem,3vw,3.2rem),100);
 	margin-bottom:0.8em ;
 }
@@ -235,6 +270,8 @@ overflow: hidden;
 	//
 	opacity: 0.8;
 }
+}
+
 @media (width<880px) {
  .viewer{
  		.reg-background,.login-background{

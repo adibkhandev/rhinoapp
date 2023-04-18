@@ -10,11 +10,14 @@ import axios from 'axios'
 const Bill = () => {
 	let list = [0,1,2,3]
 	
-	let data = useSelector((state)=> state.data)
-	let url = 'https://rhino-backend.up.railway.app/orderplace/'
-	let url2 = 'https://rhino-backend.up.railway.app'
+	let data = useSelector((state)=> state.cartState.data)
+	// let url = 'https://rhino-backend.up.railway.app/orderplace/'
+	// let url2 = 'https://rhino-backend.up.railway.app'
+	let url = 'http://127.0.0.1:8000/orderplace/'
+	let url2 = 'http://127.0.0.1:8000'
 	let context = useContext(Context)
 	let bill = context.biller
+	console.log("bill",data)
 	let id = context.user.user_id || null
 	let products = data.map((items)=>{
 		return {
@@ -22,7 +25,6 @@ const Bill = () => {
 			"count":items.count,
 		}
 	})
-	console.log("bill",data[0].product.id)
 	console.log(products)
 	let [billed,setBilled]=useState(false)
 	return (
@@ -132,7 +134,7 @@ const Bill = () => {
 							  </div>
 						</div>
 					</div>
-					<div className="payment-method">
+					{/*<div className="payment-method">
 						<h1 className="heading">
 							Payment method
 						</h1>
@@ -150,12 +152,11 @@ const Bill = () => {
 							<label for="Bkash">Bkash Send Money</label>
 						 </div>	
 						</div>
-					</div>
+					</div>*/}
 				</div>
 			</div>
 		 </div>
 		 <button onClick={()=>{
-		 	setBilled(true)
 		 	console.log({'userid':id,'products':products})
 		 	if(id){
 		    products.map((product)=>{
@@ -164,6 +165,7 @@ const Bill = () => {
                   axios.post(url,{'userid':id,'products':product})
 		           .then((response)=>{
 		           	   console.log('done')
+		 	           setBilled(true)
 		           })
 		           .catch((err)=>{
                        console.log(err)

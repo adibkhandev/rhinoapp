@@ -21,6 +21,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+   @media (width <420px) {
+     width: max(14em,80vw) !important;
+     min-width: 18rem;
+     
+   }
   .net-header{
       @include Font(0.8em,100);
       margin-left: 1rem;
@@ -64,6 +69,11 @@
   background-color: #ececec;
   box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;  
   margin: 8px 0 ;
+   @media (width <420px) {
+     width: max(14em,80vw);
+     min-width: 18rem;
+     
+   }
   &:hover{
     
     .remover{
@@ -181,6 +191,7 @@
   		@include Font(0.8em,100);
   	}
 
+
   	.triplet{
   		display: flex;
   		width: 46%;
@@ -291,6 +302,11 @@
     font-size: clamp(0.6rem,1vw,1.1rem) !important;
     background-color: #ececec;
       box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;  
+     @media (width <420px) {
+     width: max(14em,80vw);
+     min-width: 18rem;
+     
+   }
     h1{
       @include Font(0.8em,100);
     }
@@ -329,6 +345,7 @@
 
  }
   .buy-but{
+
      min-width: 24rem;
     width: 70vw;
      padding: 1em 48.6%;
@@ -336,5 +353,9 @@
      border-radius: 2px;
      color: white;
      font-size: clamp(0.6rem,1vw,1rem);
-    
+     @media (width <420px) {
+     width: max(14em,79vw);
+     min-width: 18rem;
+     
+   }
 }

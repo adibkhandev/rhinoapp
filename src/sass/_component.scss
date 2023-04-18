@@ -128,3 +128,16 @@
   	  	padding: 0.2em 0.55em;
   	  	border-radius: 40px;
 }
+.heart{
+	transition: fill 0.4s ease-in-out;
+	fill: transparent;
+    stroke: #202020;
+    stroke-width:1em ;
+    stroke-linecap: round;
+    width: 1rem;
+}
+.liked{
+	fill:pink;
+	transition: fill 0.4s ease-in-out;
+	stroke: hotpink;
+}

@@ -8,9 +8,12 @@
   width: 66%;
   
   margin-top: max(12vh,100px);
+  .order-cont-comp{
+    width: 100%;
+  }
  }
  .order{
-   min-width: 38em !important;
+   // min-width: 38em !important;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -79,7 +82,7 @@
  	}
  	.title{
  		width: 34% ;
-    margin-left: 6em;
+    margin-left: max(2em,4%);
  		h1{
  			
   		@include Font(2.6em,300);
@@ -103,21 +106,21 @@
         height: 1.4em;
       }
     }
-  	.counter{
-  		display: flex;
-  		align-items: center;
-  		img{
-  			height: 1.6em;
-  		}
-  		h1{
-  			font-size: 90%;
-  		}
-  		.left{
-  			transform: rotate(180deg);
-  		}
+  	// .counter{
+  	// 	display: flex;
+  	// 	align-items: center;
+  	// 	img{
+  	// 		height: 1.6em;
+  	// 	}
+  	// 	h1{
+  	// 		font-size: 90%;
+  	// 	}
+  	// 	.left{
+  	// 		transform: rotate(180deg);
+  	// 	}
   		
   		
-  	}
+  	// }
  	}
  
  }
