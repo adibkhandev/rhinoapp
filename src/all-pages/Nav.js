@@ -27,7 +27,7 @@ export const Nav = (props) => {
 			
 			<div className="rhino-logo">
 			     <Link to="/"></Link>
-				<img   src={location.pathname=='/'?`/rhinoapp/images/rhino-logo-${props.colour}.png`:`images/rhino-logo-${props.colour}.png`} alt="" className={"rhino"}>
+				<img   src={location.pathname=='/'?`/rhinoapp/images/logo-${props.colour}.png`:`images/logo-${props.colour}.png`} alt="" className={"rhino"}>
                         
 				</img>
 
@@ -110,26 +110,26 @@ let IconNav =(props)=>{
 	// let url = 'http://127.0.0.1:8000'
 	let url = 'https://rhino-backend.up.railway.app'
 	 let location = useLocation() 
-     let scroller = () =>{
-         let scroll = window.scrollY
-         if(scroll>pastPosition){
-         	 setScrollDirection('down')
-         	 // console.log(scrollDirection)
-         } else if(scroll<pastPosition){
-         	setScrollDirection('up')
-         	// console.log(scrollDirection)
-         }
-         setPastPosition(scroll)
+    //  let scroller = () =>{
+    //      let scroll = window.scrollY
+    //      if(scroll>pastPosition){
+    //      	 setScrollDirection('down')
+    //      	 // console.log(scrollDirection)
+    //      } else if(scroll<pastPosition){
+    //      	setScrollDirection('up')
+    //      	// console.log(scrollDirection)
+    //      }
+    //      setPastPosition(scroll)
        
-     }
-	useEffect(() => {
-        window.addEventListener('scroll',scroller)
+    //  }
+	// useEffect(() => {
+    //     window.addEventListener('scroll',scroller)
 
-        return () =>{
-           window.removeEventListener('scroll',scroller)
-        } 
+    //     return () =>{
+    //        window.removeEventListener('scroll',scroller)
+    //     } 
 		
-	})
+	// })
 	useEffect(() => {
 		console.log(notifications)
 	}, [notifications])
