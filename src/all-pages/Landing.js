@@ -99,7 +99,7 @@ let Home =(props)=>{
              
             >
            <div className="image">
-             <img src="rhinoapp/images/gojo.webp" alt=""/>
+             <img src="/rhinoapp/images/gojo.webp" alt=""/>
            </div>
            {/*<div className="image-mob">
              <img src="rhinoapp/images/gojo.webp" alt=""/>
