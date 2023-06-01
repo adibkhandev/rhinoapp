@@ -3,6 +3,7 @@ import Navigation from './Navigation'
 import '../sass/main.scss'
 import RunningOut from './RunningOut'
 import MostPopular from "./MostPopular"
+import { motion } from "framer-motion"
 // import Nav from './Nav'
 import {SearchEngine,Nav} from './Nav'
 
@@ -80,22 +81,32 @@ let Home =(props)=>{
    // props.scrolling(buttonthere)
   return(
     <>
-       <div  className="page1">
+       <div  
+        className="page1"
+        
+        >
          
-           <div  ref={myref} className="hero-section">
-           <div className="parts" id="part1">
-            {/* <Heading>
-         
-           </Heading>*/}
+           <motion.div
+             ref={myref} 
+             className="hero-section"
+             initial={{ y: -8}}
+             animate={{ y: 8}}
+            transition={{ 
+              repeat: Infinity,
+              duration: 1,
+              repeatType: "mirror"
+              }}
+             
+            >
+           <div className="image">
+             <img src="rhinoapp/images/gojo.webp" alt=""/>
            </div>
-           <div className="parts" id="part2">
-            {/* <Popup >
-         
-           </Popup>*/}
-           </div>
+           {/*<div className="image-mob">
+             <img src="rhinoapp/images/gojo.webp" alt=""/>
+           </div>*/}
              
            
-           </div>
+           </motion.div>
            
            <Scrolldown visibility={buttonthere} >
          

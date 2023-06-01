@@ -20,10 +20,7 @@ import Load from "./all-pages/Load"
 import Account from "./all-pages/Account"
 import {Taka} from "./all-pages/Components"
 import Loader from './all-pages/Loader'
-
 import {AuthProvider,Context} from './all-pages/Context'
-
-
 import {BrowserRouter , Routes,Route,Link} from "react-router-dom"
 const App = () => {
   let [loaded,setLoaded]=useState(false)
@@ -35,7 +32,7 @@ const App = () => {
          
          setLoaded(true)
          console.log('done')
-    },4200);
+    },7200);
 
     return () => {
         clearTimeout(loading)  

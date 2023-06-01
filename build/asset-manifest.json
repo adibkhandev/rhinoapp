@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/rhinoapp/static/css/main.09e43a5f.css",
-    "main.js": "/rhinoapp/static/js/main.f0bf54d9.js",
+    "main.js": "/rhinoapp/static/js/main.64ce761d.js",
     "static/js/483.013557e9.chunk.js": "/rhinoapp/static/js/483.013557e9.chunk.js",
     "static/js/787.99430d6b.chunk.js": "/rhinoapp/static/js/787.99430d6b.chunk.js",
     "static/media/deku.jpg": "/rhinoapp/static/media/deku.577627410471c5476464.jpg",
@@ -9,12 +9,12 @@
     "static/media/Komigo.ttf": "/rhinoapp/static/media/Komigo.6f3c63d06f8f676f98fe.ttf",
     "index.html": "/rhinoapp/index.html",
     "main.09e43a5f.css.map": "/rhinoapp/static/css/main.09e43a5f.css.map",
-    "main.f0bf54d9.js.map": "/rhinoapp/static/js/main.f0bf54d9.js.map",
+    "main.64ce761d.js.map": "/rhinoapp/static/js/main.64ce761d.js.map",
     "483.013557e9.chunk.js.map": "/rhinoapp/static/js/483.013557e9.chunk.js.map",
     "787.99430d6b.chunk.js.map": "/rhinoapp/static/js/787.99430d6b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.09e43a5f.css",
-    "static/js/main.f0bf54d9.js"
+    "static/js/main.64ce761d.js"
   ]
 }

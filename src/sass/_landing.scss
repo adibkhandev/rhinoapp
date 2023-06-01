@@ -1,13 +1,18 @@
 
 .land{
+	.nav-contain{
+		opacity: 0.9;
+	}
 	width: 100vw;
 	height:auto;
 	position: relative;
-		contain: paint;
+	contain: paint;
+	scroll-behavior: smooth;
 	
 }
 .floating-search{
 	display: none;
+	
 }
 .land{
 	
@@ -23,10 +28,12 @@ input , button{
 	height: 118vh;
 	max-height: 135vw;
 	min-height: 800px;
-	background: url('landing-background.jpg');
+	// background: url('landing-background.jpg');
+	background: url('../../public/images/bg-jjk-2.jpg');
 	background-repeat: no-repeat;
 	background-size:cover;
-	 background-attachment: fixed;
+	overflow: hidden;
+	 // background-attachment: fixed;
 	// overflow: hidden;
 	position:relative;
 	 h1{
@@ -59,22 +66,19 @@ input , button{
 	z-index: 1;
 	position: absolute;
     bottom: 0;
-    .parts{
-    	letter-spacing: 0.35em;
+    .image{
+    	width: 100vw;
+    	height: 100vh;
+    	display: flex;
+    	justify-content: center;
+    	align-items: flex-end;
 
-    	h1{
-    		
-    		color: white;
-    		line-height: 1.285;
-    		font-weight: 600;
-    		line-height: 1.3;
-    		font-family: 'Bangers', cursive;
-           
-    		span{
-    			color: red;
+    	img{
+    		height:80%;
+    		@media (width<460px) {
+    			height: 65%;
     		}
     	}
-
     }
 }
 #part1{
@@ -112,7 +116,7 @@ input , button{
 .search-bar{
 	display: flex;
 	align-items:center;
-	opacity: 0.85;
+	opacity: 0.45;
 	img{
 		height: 2.7em;
 	}
@@ -183,7 +187,9 @@ input , button{
 	.floating-search{
 		font-size: 0.8rem;
 		display: block;
+		
 		position: absolute;
+		z-index: 2;
 		bottom: min(7vw,240px);
 	     @media (width<600px) {
             font-size: 0.6rem;
@@ -197,7 +203,8 @@ input , button{
     	
        
          input{
-             opacity: 0.85;
+         	
+             opacity: 0.75;
             @include Font(inherit,100);
          	width: 80%;
             height: fixed;
@@ -211,7 +218,7 @@ input , button{
              display: flex;
              justify-content: center;
              align-items: center;
-             opacity: 0.85;
+             opacity: 0.75;
            width: 5.6em;
            height: 5.6em;
          	box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;  
