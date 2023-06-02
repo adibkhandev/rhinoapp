@@ -19,16 +19,18 @@
     z-index: 2;
 	// background-color: blue;
     .rhino-logo{
-        font-size: clamp(0.4rem,0.6vw,0.9rem);
-         height: 6.5em;
+         font-size: clamp(0.4rem,0.6vw,0.9rem);
+         height: 7.4em;
          display: flex;
-         margin-left: clamp(0.8rem,2vw,2rem);
-         margin-top: clamp(0.3rem,1.1vw,0.9rem);
+         margin-left: 4em;
+         margin-top: max(1.3em,1rem);
          align-items: center;
          // background-color: black;
          position: relative;
           @media (width<600px) {
-             font-size: clamp(0.5rem,1vw,0.7rem);
+             font-size: clamp(0.2rem,1.4vw,1rem);
+             margin-top: 1.4em;
+             height: 5em;
 
           }
          a{

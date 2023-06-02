@@ -28,7 +28,7 @@ const Account = () => {
     let logout = context.logout
     let userdata = context.userdata
     let setUser = context.setUser
-    console.log(userdata.id,'id')
+    // console.log(userdata.id,'id')
     // console.log(userdata)
     useEffect(() => {
     	// console.log('hoise')
